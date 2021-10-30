@@ -24,7 +24,7 @@
             <div class="leftcontact">
               <ValidationProvider
                 name="Name"
-                :rules="{ required: true, regex: /[A-Za-zА-ЯЁ]$/i }"
+                :rules="{ required: true, regex: validate.regex.surname }"
               >
                 <template slot-scope="{ errors }">
                   <div class="form-group">
@@ -47,7 +47,7 @@
 
               <ValidationProvider
                 name="Name"
-                :rules="{ required: true, regex: /[A-Za-zА-ЯЁ]$/i}"
+                :rules="{ required: true, regex: validate.regex.name }"
               >
                 <template slot-scope="{ errors }">
                   <div class="form-group">
@@ -72,7 +72,7 @@
                 name="Name"
                 :rules="{
                   required: true,
-                  regex: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i,
+                  regex: validate.regex.email,
                 }"
               >
                 <template slot-scope="{ errors }">
@@ -98,7 +98,7 @@
 
               <ValidationProvider
                 name="Name"
-                :rules="{ required: true, regex: /[A-Za-z0-9А-ЯЁ]$/i }"
+                :rules="{ required: true, regex: validate.regex.company }"
               >
                 <template slot-scope="{ errors }">
                   <div class="form-group">
@@ -121,7 +121,7 @@
 
               <ValidationProvider
                 name="Name"
-                :rules="{ required: true, regex: /[A-Za-z0-9А-ЯЁ]$/i }"
+                :rules="{ required: true, regex: validate.regex.companyAddress }"
               >
                 <template slot-scope="{ errors }">
                   <div class="form-group">
@@ -148,7 +148,7 @@
             <div class="rightcontact">
               <ValidationProvider
                 name="Name"
-                :rules="{ required: true, regex: /[A-Za-z0-9А-ЯЁ]$/i }"
+                :rules="{ required: true, regex:  validate.regex.city }"
               >
                 <template slot-scope="{ errors }">
                   <div class="form-group">
@@ -173,7 +173,7 @@
 
               <ValidationProvider
                 name="Name"
-                :rules="{ required: true, regex: /^\d{9}$/ }"
+                :rules="{ required: true, regex: validate.regex.phone }"
               >
                 <template slot-scope="{ errors }">
                   <div class="form-group">
@@ -196,7 +196,7 @@
 
               <ValidationProvider
                 name="Name"
-                :rules="{ required: true, alpha: true, max: 20 }"
+                :rules="{ required: true, regex: validate.regex.func }"
               >
                 <template slot-scope="{ errors }">
                   <div class="form-group">
@@ -218,7 +218,7 @@
               </ValidationProvider>
               <ValidationProvider
                 name="Name"
-                :rules="{ required: true, regex: /[A-Za-z0-9А-ЯЁ]$/i }"
+                :rules="{ required: true, regex: validate.regex.subject }"
               >
                 <template slot-scope="{ errors }">
                   <div class="form-group">
@@ -246,7 +246,7 @@
                 name="Name"
                 :rules="{
                   required: true,
-                  regex: /[A-Za-z0-9А-ЯЁ-]+$/i,
+                  regex: validate.regex.message,
                 }"
               >
                 <template slot-scope="{ errors }">
@@ -307,10 +307,22 @@ export default {
           company: "введите Вашу компанию",
           companyAddress: "введите адрес компании",
           city: "введите город",
-          phone: "введите телефон",
+          phone: "введите телефонв формате 8xxxxxxxxxx",
           func: "введите функцию",
           subject: "введите subject",
           message: "введите сообщение",
+        },
+        regex: {
+          surname: /[A-Za-zА-ЯЁ]$/i,
+          name: /[A-Za-zА-ЯЁ]$/i,
+          email: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i,
+          company: /[A-Za-z0-9А-ЯЁ]$/i ,
+          companyAddress: /[A-Za-z0-9А-ЯЁ]$/i ,
+          city: /[A-Za-z0-9А-ЯЁ]$/i,
+          phone:  /^\d{11}$/ ,
+          func: /[A-Za-zА-ЯЁ]$/i,
+          subject: /[A-Za-z0-9А-ЯЁ]$/i,
+          message: /[A-Za-z0-9А-ЯЁ-]+$/i,
         },
       },
     };
