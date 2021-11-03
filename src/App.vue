@@ -1,36 +1,17 @@
 <template>
-  <body>
-    <h1>Elegant Contact Form.</h1>
-    <div class="info">
-      <a href="https://www.grandvincent-marion.fr" target="_blank"
-        ><p>Made with <i class="fa fa-heart"></i> by Marion Grandvincent</p></a
-      >
-    </div>
-
+  
     <form>
-      <h1>
-        Should you have any questions, please do not hesitate to contact me :
-      </h1>
-
-      <div class="contentform">
-        <div id="sendmessage">
-          Your message has been sent successfully. Thank you.
-        </div>
-      </div>
-
       <ValidationObserver>
         <template slot-scope="{ valid }">
           <form @submit.prevent="doAction()">
-            <div class="leftcontact">
+   
               <ValidationProvider
                 name="Name"
                 :rules="{ required: true, regex: validate.regex.surname }"
               >
                 <template slot-scope="{ errors }">
                   <div class="form-group">
-                    <p>Surname<span>*</span></p>
-                    <span class="icon-case"><i class="fa fa-male"></i></span>
-                    <input
+                      <input
                       type="text"
                       name="nom"
                       id="nom"
@@ -38,244 +19,29 @@
                       data-msg="Vérifiseigné."
                       v-model="validate.surname"
                     />
+                         <div class="error">
+                      {{validate.surname.length}}
+                    </div>
+
+
                     <div class="error" v-if="errors[0]">
                       {{ validate.messages.surname }}
+
                     </div>
+           
                   </div>
+            
                 </template>
               </ValidationProvider>
 
-              <ValidationProvider
-                name="Name"
-                :rules="{ required: true, regex: validate.regex.name }"
-              >
-                <template slot-scope="{ errors }">
-                  <div class="form-group">
-                    <p>Name<span>*</span></p>
-                    <span class="icon-case"><i class="fa fa-user"></i></span>
-                    <input
-                      type="text"
-                      name="prenom"
-                      id="prenom"
-                      data-rule="required"
-                      data-msg="Vérifiez votre saisie sur les champs : Le champ 'Prénom' doit être renseigné."
-                      v-model="validate.name"
-                    />
-                    <div class="error" v-if="errors[0]">
-                      {{ validate.messages.name }}
-                    </div>
-                  </div>
-                </template>
-              </ValidationProvider>
-
-              <ValidationProvider
-                name="Name"
-                :rules="{
-                  required: true,
-                  regex: validate.regex.email,
-                }"
-              >
-                <template slot-scope="{ errors }">
-                  <div class="form-group">
-                    <p>email<span>*</span></p>
-                    <span class="icon-case"
-                      ><i class="fa fa-envelope-o"></i
-                    ></span>
-                    <input
-                      type="text"
-                      name="prenom"
-                      id="prenom"
-                      data-rule="required"
-                      data-msg="Vérifiez votre saisie sur les champs : Le champ 'Prénom' doit être renseigné."
-                      v-model="validate.email"
-                    />
-                    <div class="error" v-if="errors[0]">
-                      {{ validate.messages.email }}
-                    </div>
-                  </div>
-                </template>
-              </ValidationProvider>
-
-              <ValidationProvider
-                name="Name"
-                :rules="{ required: true, regex: validate.regex.company }"
-              >
-                <template slot-scope="{ errors }">
-                  <div class="form-group">
-                    <p>Company<span>*</span></p>
-                    <span class="icon-case"><i class="fa fa-home"></i></span>
-                    <input
-                      type="text"
-                      name="prenom"
-                      id="prenom"
-                      data-rule="required"
-                      data-msg="Vérifiez votre saisie sur les champs : Le champ 'Prénom' doit être renseigné."
-                      v-model="validate.company"
-                    />
-                    <div class="error" v-if="errors[0]">
-                      {{ validate.messages.company }}
-                    </div>
-                  </div>
-                </template>
-              </ValidationProvider>
-
-              <ValidationProvider
-                name="Name"
-                :rules="{ required: true, regex: validate.regex.companyAddress }"
-              >
-                <template slot-scope="{ errors }">
-                  <div class="form-group">
-                    <p>Company Address<span>*</span></p>
-                    <span class="icon-case"
-                      ><i class="fa fa-location-arrow"></i
-                    ></span>
-                    <input
-                      type="text"
-                      name="prenom"
-                      id="prenom"
-                      data-rule="required"
-                      data-msg="Vérifiez votre saisie sur les champs : Le champ 'Prénom' doit être renseigné."
-                      v-model="validate.companyAddress"
-                    />
-                    <div class="error" v-if="errors[0]">
-                      {{ validate.messages.companyAddress }}
-                    </div>
-                  </div>
-                </template>
-              </ValidationProvider>
-            </div>
-
-            <div class="rightcontact">
-              <ValidationProvider
-                name="Name"
-                :rules="{ required: true, regex:  validate.regex.city }"
-              >
-                <template slot-scope="{ errors }">
-                  <div class="form-group">
-                    <p>City<span>*</span></p>
-                    <span class="icon-case"
-                      ><i class="fa fa-building-o"></i
-                    ></span>
-                    <input
-                      type="text"
-                      name="prenom"
-                      id="prenom"
-                      data-rule="required"
-                      data-msg="Vérifiez votre saisie sur les champs : Le champ 'Prénom' doit être renseigné."
-                      v-model="validate.city"
-                    />
-                    <div class="error" v-if="errors[0]">
-                      {{ validate.messages.city }}
-                    </div>
-                  </div>
-                </template>
-              </ValidationProvider>
-
-              <ValidationProvider
-                name="Name"
-                :rules="{ required: true, regex: validate.regex.phone }"
-              >
-                <template slot-scope="{ errors }">
-                  <div class="form-group">
-                    <p>Phone number<span>*</span></p>
-                    <span class="icon-case"><i class="fa fa-phone"></i></span>
-                    <input
-                      type="text"
-                      name="prenom"
-                      id="prenom"
-                      data-rule="required"
-                      data-msg="Vérifiez votre saisie sur les champs : Le champ 'Prénom' doit être renseigné."
-                      v-model="validate.phone"
-                    />
-                    <div class="error" v-if="errors[0]">
-                      {{ validate.messages.phone }}
-                    </div>
-                  </div>
-                </template>
-              </ValidationProvider>
-
-              <ValidationProvider
-                name="Name"
-                :rules="{ required: true, regex: validate.regex.func }"
-              >
-                <template slot-scope="{ errors }">
-                  <div class="form-group">
-                    <p>Function<span>*</span></p>
-                    <span class="icon-case"><i class="fa fa-info"></i></span>
-                    <input
-                      type="text"
-                      name="prenom"
-                      id="prenom"
-                      data-rule="required"
-                      data-msg="Vérifiez votre saisie sur les champs : Le champ 'Prénom' doit être renseigné."
-                      v-model="validate.func"
-                    />
-                    <div class="error" v-if="errors[0]">
-                      {{ validate.messages.func }}
-                    </div>
-                  </div>
-                </template>
-              </ValidationProvider>
-              <ValidationProvider
-                name="Name"
-                :rules="{ required: true, regex: validate.regex.subject }"
-              >
-                <template slot-scope="{ errors }">
-                  <div class="form-group">
-                    <p>Subject<span>*</span></p>
-
-                    <span class="icon-case"
-                      ><i class="fa fa-comment-o"></i
-                    ></span>
-                    <input
-                      type="text"
-                      name="prenom"
-                      id="prenom"
-                      data-rule="required"
-                      data-msg="Vérifiez votre saisie sur les champs : Le champ 'Prénom' doit être renseigné."
-                      v-model="validate.subject"
-                    />
-                    <div class="error" v-if="errors[0]">
-                      {{ validate.messages.subject }}
-                    </div>
-                  </div>
-                </template>
-              </ValidationProvider>
-
-              <ValidationProvider
-                name="Name"
-                :rules="{
-                  required: true,
-                  regex: validate.regex.message,
-                }"
-              >
-                <template slot-scope="{ errors }">
-                  <div class="form-group">
-                    <p>Message<span>*</span></p>
-                    <span class="icon-case"><i class="fa fa-user"></i></span>
-                    <textarea
-                      type="text"
-                      name="prenom"
-                      id="prenom"
-                      data-rule="required"
-                      data-msg="Vérifiez votre saisie sur les champs : Le champ 'Prénom' doit être renseigné."
-                      v-model="validate.message"
-                    />
-                    <div class="error" v-if="errors[0]">
-                      {{ validate.messages.message }}
-                    </div>
-                  </div>
-                </template>
-              </ValidationProvider>
-            </div>
-            <button type="submit" :disabled="!valid" class="bouton-contact">
+            <button type="submit" :disabled="!valid">
               Send
             </button>
           </form>
         </template>
       </ValidationObserver>
     </form>
-  </body>
+
 </template>
 
 <script>
@@ -323,6 +89,7 @@ export default {
           func: /[A-Za-zА-ЯЁ]$/i,
           subject: /[A-Za-z0-9А-ЯЁ]$/i,
           message: /[A-Za-z0-9А-ЯЁ-]+$/i,
+
         },
       },
     };
