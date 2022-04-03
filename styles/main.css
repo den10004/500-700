@@ -1,10 +1,10 @@
 .main {
-  margin: 100px auto 0;
+  margin: 215px auto 0;
 }
 
 @media screen and (max-width: 768px) {
   .main {
-    margin: 100px auto 0;
+    margin: 150px auto 0;
     width: 95%;
   }
 }

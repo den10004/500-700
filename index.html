@@ -13,7 +13,11 @@
   <body>
     <!-- BEGIN HEADER -->
     <header class="header">
-      <img class="header__logo" src="./images/logo.png" alt="logo" />
+      <div class="header__wrap">
+        <a href="/">
+          <img class="header__logo" src="./images/logo.png" alt="logo" />
+        </a>
+     
       <nav>
         <ul class="menu">
           <li>
@@ -61,7 +65,9 @@
 
       <button class="header__button">
         <img src="./images/header-button.png" alt="botton-image" />
-      </button>
+      </button> 
+      </div>
+   
 
     
       <div class="modal">
@@ -105,8 +111,6 @@
         </div>
       </div>
     </div>
-        
- 
     </header>
     <!-- END HEADER -->
 
@@ -136,6 +140,7 @@
       </div>
     </div>
     <!-- END MAIN -->
+
     <!-- BEGIN FAQ -->
     <div class="faq">
       <div class="faq__headline">FAQ</div>
@@ -177,7 +182,7 @@
         <div class="news__cards-card">
           <img src="./images/card.png" alt="card" />
           <div class="news__cards-card-content">
-            <p>Заголовок</p>
+            <h5>Заголовок</h5>
             <span> Описаниe Описание Описание Описание Описание </span>
           </div>
         </div>
@@ -185,7 +190,7 @@
         <div class="news__cards-card">
           <img src="./images/slider1.png" alt="card" />
           <div class="news__cards-card-content">
-            <p>Заголовок</p>
+            <h5>Заголовок</h5>
             <span> Описаниe Описание Описание Описание Описание </span>
           </div>
         </div>
@@ -193,7 +198,7 @@
         <div class="news__cards-card">
           <img src="./images/slider2.png" alt="card" />
           <div class="news__cards-card-content">
-            <p>Заголовок</p>
+            <h5>Заголовок</h5>
             <span> Описаниe Описание Описание Описание Описание </span>
           </div>
         </div>
@@ -201,7 +206,7 @@
         <div class="news__cards-card">
           <img src="./images/card.png" alt="card" />
           <div class="news__cards-card-content">
-            <p>Заголовок</p>
+            <h5>Заголовок</h5>
             <span> Описаниe Описание Описание Описание Описание </span>
           </div>
         </div>
@@ -209,7 +214,7 @@
         <div class="news__cards-card">
           <img src="./images/slider1.png" alt="card" />
           <div class="news__cards-card-content">
-            <p>Заголовок</p>
+            <h5>Заголовок</h5>
             <span> Описаниe Описание Описание Описание Описание </span>
           </div>
         </div>
@@ -217,7 +222,7 @@
         <div class="news__cards-card">
           <img src="./images/slider2.png" alt="card" />
           <div class="news__cards-card-content">
-            <p>Заголовок</p>
+            <h5>Заголовок</h5>
             <span> Описаниe Описание Описание Описание Описание </span>
           </div>
         </div>
@@ -229,7 +234,7 @@
             <div class="news__cards-card">
               <img src="./images/card.png" alt="card" />
               <div class="news__cards-card-content">
-                <p>Заголовок</p>
+                <h5>Заголовок</h5>
                 <span> Описаниe Описание Описание Описание Описание </span>
               </div>
             </div>
@@ -238,7 +243,7 @@
             <div class="news__cards-card">
               <img src="./images/slider1.png" alt="card" />
               <div class="news__cards-card-content">
-                <p>Заголовок</p>
+                <h5>Заголовок</h5>
                 <span> Описаниe Описание Описание Описание Описание </span>
               </div>
             </div>
@@ -247,7 +252,7 @@
             <div class="news__cards-card">
               <img src="./images/slider2.png" alt="card" />
               <div class="news__cards-card-content">
-                <p>Заголовок</p>
+                <h5>Заголовок</h5>
                 <span> Описаниe Описание Описание Описание Описание </span>
               </div>
             </div>
@@ -256,7 +261,7 @@
             <div class="news__cards-card">
               <img src="./images/slider1.png" alt="card" />
               <div class="news__cards-card-content">
-                <p>Заголовок</p>
+                <h5>Заголовок</h5>
                 <span> Описаниe Описание Описание Описание Описание </span>
               </div>
             </div>
@@ -270,17 +275,16 @@
     <div class="subscription">
       <div class="subscription__wrap">
         <h2 class="subscription__headline">Подпишись</h2>
-        <h4 class="subscription__description">
+        <p class="subscription__description">
           Отправляем анонсы новых статей, выпусков и <br />трансляций
-        </h4>
+        </p>
         <div class="subscription__block">
           <form class="subscription__block-inputs">
             <div class="form__field">
               <input type="email" name="name" placeholder="Email" />
               <span class="form__error"
                 >Это поле должно содержать E-Mail в формате
-                example@site.com</span
-              >
+                example@site.com</span>
             </div>
             <div class="form__field">
               <input type="date" name="date" placeholder="11.02.2022" />

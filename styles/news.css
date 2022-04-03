@@ -72,7 +72,7 @@
   height: auto;
 }
 
-.news__cards-card-content > p {
+.news__cards-card-content > h5 {
   font-family: "Mplus 1p";
   font-style: normal;
   font-weight: 500;
