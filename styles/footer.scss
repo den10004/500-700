@@ -1,0 +1,95 @@
+@mixin fontStyle($f) {
+  font-family: "Mplus 1p";
+  font-style: normal;
+  font-weight: 500;
+  font-size: $f;
+}
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  margin: 80px auto 80px auto;
+  max-width: 1240px;
+}
+
+@media screen and (max-width: 1280px) {
+  .footer {
+    width: 95%;
+  }
+}
+
+.footer__blocks {
+  display: flex;
+}
+
+@media screen and (max-width: 768px) {
+  .footer__blocks {
+    justify-content: space-between;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .footer__blocks {
+    flex-direction: column;
+  }
+}
+
+.footer__blocks-left {
+  max-width: 400px;
+}
+
+.footer__blocks-left > h5 {
+  @include fontStyle(16px);
+  line-height: 24px;
+  color: white;
+  margin: 0;
+}
+
+.footer__links {
+  display: flex;
+  flex-wrap: wrap;
+  list-style-type: none;
+  padding: 0;
+  width: 400px;
+  margin: 10px 0 25px 0;
+}
+
+@media screen and (max-width: 425px) {
+  .footer__links {
+    width: 90%;
+  }
+}
+
+.footer__links > li {
+  @include fontStyle(14px);
+  line-height: 21px;
+  color: white;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.footer__blocks-left > a {
+  color: white;
+  @include fontStyle(14px);
+  line-height: 21px;
+  cursor: pointer;
+}
+
+.footer__blocks-right {
+  display: flex;
+  justify-content: space-between;
+  width: 205px;
+  margin-left: 120px;
+}
+
+@media screen and (max-width: 768px) {
+  .footer__blocks-right {
+    margin-left: 0px;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .footer__blocks-right {
+    margin: 40px auto;
+  }
+}

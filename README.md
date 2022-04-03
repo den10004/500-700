@@ -1,5 +1,7 @@
-# Валилации формы на Vue с использованием vee-validate https://vee-validate.logaretm.com/
-# https://github.com/den10004/Vue_veeValidate.git
-# Рабочая версия https://codesandbox.io/s/vee-validate-nc8uc?file=/src/App.vue:11761-11781
+# Тестовое задание
 
-
+# Реализовано
+1. Адаптивная вёрстка макета с 2-мя слайдерами swiper.js,
+2. Вызов подменю пунктов в "шапке" макета,
+3. Блок FAQ - аткрытие подменю блоков,
+4. В блоке "Подпишись" css-валидация формы.

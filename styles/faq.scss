@@ -1,0 +1,96 @@
+@mixin fontStyle($w, $f) {
+  font-family: "Mplus 1p";
+  font-style: normal;
+  font-weight: $w;
+  font-size: $f;
+}
+
+.faq {
+  display: flex;
+  margin: 170px auto 0;
+  max-width: 1240px;
+
+  .faq__headline {
+    @include fontStyle(500, 80px);
+    line-height: 85px;
+    letter-spacing: -0.03em;
+    color: white;
+    width: 154px;
+  }
+}
+
+@media screen and (max-width: 1280px) {
+  .faq {
+    width: 95%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .faq {
+    margin: 100px auto 0;
+    flex-direction: column;
+  }
+}
+
+.faq__blocks {
+  width: 988px;
+  margin-left: 98px;
+  > hr {
+    color: #ffffff;
+    width: 100%;
+    opacity: 0.5;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .faq__blocks {
+    width: 98%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .faq__blocks {
+    margin-left: 0;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .faq__blocks {
+    width: 95%;
+  }
+}
+
+.faq__block {
+  width: 100%;
+  
+  > label {
+    @include fontStyle(400, 24px);
+    line-height: 35px;
+    color: #ffffff;
+    cursor: pointer;
+    display: block;
+    overflow-y: hidden;
+  }
+  > hr {
+    opacity: 0.5;
+  }
+  > input {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    overflow-y: hidden;
+  }
+}
+
+.faq__block-content {
+  @include fontStyle(400, 16px);
+  line-height: 24px;
+  color: #ffffff;
+  display: none;
+  overflow-y: hidden;
+}
+
+.faq__block > input:checked ~ .faq__block-content {
+  display: block;
+}

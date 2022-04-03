@@ -1,0 +1,107 @@
+.faq {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 170px auto 0;
+  max-width: 1240px;
+}
+
+.faq .faq__headline {
+  font-family: "Mplus 1p";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 80px;
+  line-height: 85px;
+  letter-spacing: -0.03em;
+  color: white;
+  width: 154px;
+}
+
+@media screen and (max-width: 1280px) {
+  .faq {
+    width: 95%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .faq {
+    margin: 100px auto 0;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+
+.faq__blocks {
+  width: 988px;
+  margin-left: 98px;
+}
+
+.faq__blocks > hr {
+  color: #ffffff;
+  width: 100%;
+  opacity: 0.5;
+}
+
+@media screen and (max-width: 1000px) {
+  .faq__blocks {
+    width: 98%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .faq__blocks {
+    margin-left: 0;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .faq__blocks {
+    width: 95%;
+  }
+}
+
+.faq__block {
+  width: 100%;
+}
+
+.faq__block > label {
+  font-family: "Mplus 1p";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 35px;
+  color: #ffffff;
+  cursor: pointer;
+  display: block;
+  overflow-y: hidden;
+}
+
+.faq__block > hr {
+  opacity: 0.5;
+}
+
+.faq__block > input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  overflow-y: hidden;
+}
+
+.faq__block-content {
+  font-family: "Mplus 1p";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: #ffffff;
+  display: none;
+  overflow-y: hidden;
+}
+
+.faq__block > input:checked ~ .faq__block-content {
+  display: block;
+}
+/*# sourceMappingURL=faq.css.map */

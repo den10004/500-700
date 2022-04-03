@@ -1,0 +1,89 @@
+@mixin fontStyle($f, $l) {
+  font-family: "Mplus 1p";
+  font-style: normal;
+  font-weight: 500;
+  font-size: $f;
+  color: #ffffff;
+  line-height: $l;
+}
+
+//  @include fontStyle(400, 24px);
+
+.news {
+  display: flex;
+  flex-direction: column;
+  margin: 100px auto 0;
+  max-width: 1240px;
+}
+
+@media screen and (max-width: 1280px) {
+  .news {
+    width: 95%;
+  }
+}
+
+.news__headline {
+  @include fontStyle(80px, 85px);
+  letter-spacing: -0.03em;
+  margin: 0;
+}
+
+@media screen and (max-width: 425px) {
+  .news__headline {
+    @include fontStyle(40px, 85px);
+  }
+}
+
+
+.news__cards {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 20px;
+  margin-top: 30px;
+  height: 850px;
+}
+
+@media screen and (max-width: 1300px) {
+  .news__cards {
+    display: none;
+  }
+}
+
+.news__cards-card {
+  width: 100%;
+  height: 370px;
+  background: black;
+  padding-bottom: 40px;
+}
+
+.news__cards-card-content {
+  color: white;
+  
+  > img {
+    width: 100%;
+    height: auto;
+  }
+
+  > p {
+    @include fontStyle(16px, 24px);
+    margin: 10px 0px;
+  }
+
+  > span {
+    @include fontStyle(14px, 21px);
+    margin: 10px 0px;
+  }
+}
+
+
+
+.newsSlider {
+  display: none;
+}
+
+@media screen and (max-width: 1300px) {
+  .newsSlider {
+    display: flex;
+  }
+}

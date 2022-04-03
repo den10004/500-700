@@ -1,0 +1,136 @@
+.subscription {
+  background-color: white;
+  width: 100%;
+  padding: 50px 0px 50px;
+}
+
+.subscription__wrap {
+  display: flex;
+  flex-direction: column;
+  max-width: 1240px;
+  margin: 0 auto;
+}
+
+@media screen and (max-width: 1280px) {
+  .subscription__wrap {
+    width: 95%;
+  }
+}
+
+@media screen and (max-width: 850px) {
+  .subscription__wrap {
+    width: 410px;
+    margin: 0 auto;
+  }
+}
+
+@media screen and (max-width: 430px) {
+  .subscription__wrap {
+    width: 95%;
+  }
+}
+
+.subscription__headline {
+  font-family: "Mplus 1p";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 80px;
+  letter-spacing: -0.03em;
+  color: #0b0a0d;
+  margin: 0;
+}
+
+@media screen and (max-width: 768px) {
+  .subscription__headline {
+    font-size: 40px;
+  }
+}
+
+.subscription__description {
+  font-family: "Mplus 1p";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  color: #0b0a0d;
+  margin: 30px 0 0;
+}
+
+.subscription__block {
+  margin: 10px 0 0;
+  width: 820px;
+}
+
+@media screen and (max-width: 850px) {
+  .subscription__block {
+    width: 100%;
+  }
+}
+
+.subscription__block-inputs {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 10px;
+}
+
+@media screen and (max-width: 850px) {
+  .subscription__block-inputs {
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr;
+  }
+}
+
+.form__field > input {
+  width: 400px;
+  height: 50px;
+  border: 1px solid rgba(0, 0, 0, 0.4);
+  box-sizing: border-box;
+  border-radius: 10px;
+  align-items: center;
+  padding: 14px 15px 16px 20px;
+}
+
+@media screen and (max-width: 430px) {
+  .form__field > input {
+    width: 95%;
+  }
+}
+
+.subscription__block-inputs > button {
+  margin-top: 20px;
+  align-items: center;
+  padding: 14px 20px 16px;
+  width: 141px;
+  height: 50px;
+  border: 1px solid rgba(0, 0, 0, 0.4);
+  box-sizing: border-box;
+  border-radius: 10px;
+  background-color: white;
+  cursor: pointer;
+}
+
+.subscription__block-inputs > button:hover {
+  background: #75ff72;
+}
+
+/*валидаци формы*/
+
+.form__error {
+	color: red;
+	text-align: left;
+	font-size: 12px;
+	display: block;
+	margin-top: 3px;
+	display: none;
+}
+
+input:valid:not(:placeholder-shown) {
+	border-color: green;
+}
+
+input:invalid:not(:placeholder-shown) {
+	border-color: red;
+}
+input:invalid:not(:placeholder-shown) + .form__error {
+	display: block;
+}

@@ -1,0 +1,181 @@
+@mixin fontStyle($w, $f) {
+  font-family: "Mplus 1p";
+  font-style: normal;
+  font-weight: $w;
+  font-size: $f;
+}
+
+.header {
+  display: flex;
+  max-width: 1240px;
+  margin: auto;
+  background-color: black;
+  padding-top: 77px;
+}
+
+@media screen and (max-width: 1280px) {
+  .header {
+    width: 95%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .header {
+    justify-content: space-between;
+    padding-top: 35px;
+  }
+}
+
+.header__logo {
+  width: 42px;
+  height: 50px;
+}
+
+.menu {
+  display: flex;
+  list-style-type: none;
+  width: 440px;
+  justify-content: space-between;
+  @include fontStyle(500, 16);
+  line-height: 24px;
+  color: white;
+  margin-left: 220px;
+}
+
+@media screen and (max-width: 1024px) {
+  .menu {
+    margin-left: 100px;
+  }
+}
+
+
+@media screen and (max-width: 768px) {
+  .menu {
+    display: none;
+  }
+}
+
+.menu > li {
+  cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+  .menu > li {
+    display: none;
+  }
+}
+
+/*************************/
+.header__button {
+  display: none;
+  padding: 0;
+  text-align: center;
+  cursor: pointer;
+  border: 0;
+  background: transparent;
+}
+
+@media screen and (max-width: 768px) {
+  .header__button {
+    display: block;
+    background: transparent;
+    border: 0;
+  }
+}
+/*********************/
+.menu li {
+  width: 150px;
+  height: 30px;
+  list-style: none;
+  position: relative;
+  text-align: center;
+}
+
+.menu > li:hover {
+  text-decoration: none;
+  border-bottom: 1px white solid;
+}
+
+.menu ul {
+  position: absolute;
+  left: 0;
+  top: 100%;
+  display: none;
+  padding: 0;
+}
+
+.menu li:hover ul {
+  display: block;
+}
+
+/*******Модальное окно**********/
+.modal {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  z-index: 10;
+  background-color: rgba(71, 71, 71, 0.76);
+  display: none;
+}
+
+.modal__wrap {
+  position: absolute;
+  display: flex;
+  color: white;
+  z-index: 5;
+  background: black;
+  width: 300px;
+  right: 0;
+  padding: 5px 20px 5px 20px;
+  top: 50px;
+}
+
+.modal__block {
+  width: 100%;
+
+  > label {
+    @include fontStyle(400, 24px);
+    line-height: 35px;
+    color: #ffffff;
+    cursor: pointer;
+    display: block;
+    overflow-y: hidden;
+  }
+
+  > input {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    overflow-y: hidden;
+  }
+}
+
+.modal__close {
+  cursor: pointer;
+  font-size: 20px;
+}
+
+.modal__block-content {
+  @include fontStyle(400, 16px);
+  line-height: 24px;
+  color: #ffffff;
+  display: none;
+  list-style-type: none;
+  overflow-y: hidden;
+
+  > li > a {
+    text-decoration: none;
+    color: white;
+  }
+}
+
+.modal__block > input:checked ~ .modal__block-content {
+  display: block;
+}
+
+.modal__blocks {
+  margin: 0 auto;
+}
